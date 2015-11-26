@@ -1,18 +1,18 @@
-######################################################################################
+###########################################################################################
 #     List all EMC Symmetrix Arrays visible from a specified Unisphere for VMAX Server 
 #	
 #	  Requirements:	
-#					Minimum Perl 5 
-#					Minimum 8.0 Unisphere For VMAX
+#			Minimum Perl 5 
+#			Minimum 8.0 Unisphere For VMAX
 #				
 #	  Inputs:		
-#					ipaddress : The Ip Address of server running Unisphere For VMAX
-#					username  : The Username of a user with Minimum monitor privileges 
-#					password  : The password for the specified user
+#			ipaddress : The Ip Address of server running Unisphere For VMAX
+#			username  : The Username of a user with Minimum monitor privileges 
+#			password  : The password for the specified user
 #
-######################################################################################
+###########################################################################################
 
-######################################################################################
+###########################################################################################
 #  Imports
 
  # http://search.cpan.org/~makamaka/JSON/lib/JSON.pm
@@ -34,9 +34,9 @@ use Data::Dumper;
  # Example install using cpanm:
  #   cpanm -i MIME::Base64
 use MIME::Base64;
-######################################################################################
+###########################################################################################
 
-######################################################################################
+###########################################################################################
 #  Variables 
 
 # Quit unless we have the correct number of command-line args
@@ -57,17 +57,17 @@ my $headers = {
 	Content-Type => 'application/json',
 	Authorization => 'Basic ' . encode_base64($username . ':' . $password)
 };
-######################################################################################
+###########################################################################################
 
-######################################################################################
+###########################################################################################
 #  Main 
 
 showTitle();
 showSymmetrixDetails();
 
-######################################################################################
+###########################################################################################
 
-######################################################################################
+###########################################################################################
 #  Sub Procedures 
 
 sub showSymmetrixDetails{
@@ -111,7 +111,7 @@ sub showSymmetrixDetails{
 
 sub runRestGetCall{
 	# Get passed in URL argument
-    my ($url) = @_;	
+    	my ($url) = @_;	
 	# Get Client 
 	my $client = getClient();	
 	# Run GET call
@@ -149,10 +149,10 @@ sub getClient{
 }
 
 sub responseErrorHandler{
-	# Generic Handler 
+    	# Generic Handler 
 	
 	# Get passed in response Code and Response Content 
-    my ($responseCode,$responseContent) = @_;
+    	my ($responseCode,$responseContent) = @_;
 	
 	if($responseContent eq ""){
 		print "Response code:" . $responseCode . "\n";
@@ -178,28 +178,28 @@ sub responseErrorHandler{
 }
 
 sub toList {
-   my $data = shift;
-   my $key = shift;
-   if (ref($data->{$key}) eq 'ARRAY') {
-       $data->{$key};
-   } elsif (ref($data->{$key}) eq 'HASH') {
-       [$data->{$key}];
-   } else {
-       [];
-   }
+   	my $data = shift;
+   	my $key = shift;
+   	if (ref($data->{$key}) eq 'ARRAY') {
+       		$data->{$key};
+   	} elsif (ref($data->{$key}) eq 'HASH') {
+       		[$data->{$key}];
+   	} else {
+       		[];
+   	}
 }
 
 sub showTitle{
 	print "\n";
-	print "        ///////////////    /////          /////         ///////// 		    \n";
-	print "        ////               //////        //////       ///					\n";
-	print "        ////               //// //      // ////     ///					    \n";
-	print "        ////               ////  //    //  ////   ///						\n";
-	print "        ///////////////    ////   //  //   ////   ///						\n";
-	print "        ////               ////    ////    ////   ///						\n";
-	print "        ////               ////            ////    ///					    \n";
-	print "        ////               ////            ////      ///					    \n";
-	print "        ///////////////    ////            ////        //////////			\n";
+	print "        ///////////////    /////          /////         /////////        \n";
+	print "        ////               //////        //////       ///		\n";
+	print "        ////               //// //      // ////     ///			\n";
+	print "        ////               ////  //    //  ////   ///			\n";
+	print "        ///////////////    ////   //  //   ////   ///			\n";
+	print "        ////               ////    ////    ////   ///			\n";
+	print "        ////               ////            ////    ///			\n";
+	print "        ////               ////            ////      ///			\n";
+	print "        ///////////////    ////            ////        //////////	\n";
 	print "\n";
 }
-######################################################################################
+###########################################################################################
