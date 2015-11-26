@@ -14,7 +14,7 @@ Required arguments:
 	username  : The Username of a user with Minimum monitor privileges 
 	password  : The password for the specified user	
 	
-Reports the following for each Symmetrix viable to the Unisphere for VMAX server:
+Reports the following for each Symmetrix visible to the Unisphere for VMAX server:
 	Symmetrix : The Symmetrix Id
 	Model	  : The Model of the Symmetrix 
 	Ucode     : The current ucode level of the Symmetrix
