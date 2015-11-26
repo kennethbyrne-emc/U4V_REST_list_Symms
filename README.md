@@ -1,4 +1,4 @@
-# VMAX FAST VP Report
+# Unisphere for VMAX List Symmetrix Arrays
 
 This Perl script returns a list of all visible EMC Symmetrix Arrays for a specified Unisphere for VMAX instance using REST api. 
 
