@@ -7,7 +7,7 @@ This is a simple example of a REST GET call issued against a Unisphere for VMAX 
 # Usage
 
 ~~~
-usage: REST_List_Symm.py ipaddress username password 
+usage: perl REST_List_Symm.py ipaddress username password 
 
 Required arguments:
 	ipaddress : The Ip Address of server running Unisphere For VMAX
